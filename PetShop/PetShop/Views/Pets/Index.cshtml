@@ -1,0 +1,13 @@
+﻿@model PetShop.Models.ViewModels.BreedViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (string breed in Model.Breeds)
+{
+    <h3>@breed</h3>
+    Html.RenderPartial("_PetListPartial", Model.PetService.GetPetsByBreed(breed));
+}
